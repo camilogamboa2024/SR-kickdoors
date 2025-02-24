@@ -1,1 +1,476 @@
-<h1> SR-kickdoors </h1>
+
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Camilo Gamboa -- Cybersecurity Architect & Offensive Security Expert">
+    <title>Camilo Gamboa |  Cybersecurity ,</title>
+    <style>
+    :root {
+      --primary: #0a192f;
+      --secondary: #172a45;
+      --accent: #64ffda;
+      --text-primary: #e6f1ff;
+      --text-secondary: #8892b0;
+      --transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background-color: var(--primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Header Section */
+    .professional-header {
+      width: 100%;
+      padding: 6rem 2rem 4rem;
+      max-width: 1440px;
+      text-align: center;
+      position: relative;
+    }
+
+    .identity-wrapper {
+      margin-bottom: 5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nationality-container {
+      display: inline-flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      filter: drop-shadow(0 4px 12px rgba(100,255,218,0.15));
+    }
+
+    .national-flag {
+      width: 120px;
+      height: 75px;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      transition: var(--transition);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .national-flag:hover {
+      transform: translateY(-5px) scale(1.03);
+      clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+    }
+
+    .professional-identity {
+      font-size: 3rem;
+      color: var(--accent);
+      letter-spacing: 1.8px;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      text-shadow: 0 0 25px rgba(100,255,218,0.2);
+    }
+
+    .expertise-subtitle {
+      font-size: 1.4rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.9px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    /* Cube Visualization */
+    .expertise-visualization {
+      padding: 5rem 2rem;
+      width: 100%;
+      max-width: 1440px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .cube-environment {
+      perspective: 1500px;
+      margin: 4rem 0;
+      position: relative;
+    }
+
+    .security-cube {
+      width: 360px;
+      height: 360px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: professionalRotation 40s infinite linear;
+      cursor: pointer;
+      margin: 0 auto;
+    }
+
+    .cube-plane {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(152deg, var(--secondary) 0%, #1a304e 100%);
+      border: 1px solid rgba(100,255,218,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem;
+      backface-visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      border-radius: 8px;
+    }
+
+    .cube-plane:hover {
+      transform: translateZ(35px) rotateZ(1deg);
+      background: linear-gradient(152deg, #1a304e 0%, var(--secondary) 100%);
+    }
+
+    .plane-title {
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .multilingual-labels {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .cyber-visual {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(125%);
+      transition: var(--transition);
+      border-radius: 6px;
+    }
+
+    .cyber-visual:hover {
+      filter: grayscale(0%) contrast(110%);
+      transform: scale(1.02);
+    }
+
+    /* Cube Positions */
+    .front { transform: rotateY(0deg) translateZ(180px); }
+    .back { transform: rotateY(180deg) translateZ(180px); }
+    .left { transform: rotateY(-90deg) translateZ(180px); }
+    .right { transform: rotateY(90deg) translateZ(180px); }
+    .top { transform: rotateX(90deg) translateZ(180px); }
+    .bottom { transform: rotateX(-90deg) translateZ(180px); }
+
+    @keyframes professionalRotation {
+      0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+      100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+    }
+
+    /* Information System */
+    .information-system {
+      width: 100%;
+      max-width: 900px;
+      padding: 3rem 2rem;
+      margin: 4rem 0;
+    }
+
+    .dynamic-interface {
+      background: linear-gradient(152deg, var(--secondary) 0%, #1a304e 100%);
+      border-radius: 14px;
+      padding: 3rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .typing-terminal {
+      font-size: 1.2rem;
+      min-height: 160px;
+      position: relative;
+      line-height: 1.9;
+      color: var(--text-primary);
+      padding-right: 2rem;
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background: var(--accent);
+      animation: terminalBlink 1s infinite;
+    }
+
+    .navigation-system {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .terminal-button {
+      padding: 1rem 2.5rem;
+      background: rgba(100,255,218,0.05);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terminal-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(100,255,218,0.15), transparent);
+      transition: 0.5s;
+    }
+
+    .terminal-button:hover {
+      background: rgba(100,255,218,0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(100,255,218,0.2);
+    }
+
+    .terminal-button:hover::before {
+      left: 100%;
+    }
+
+    @keyframes terminalBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Responsive Engineering */
+    @media (max-width: 1280px) {
+      .professional-identity {
+        font-size: 2.5rem;
+      }
+      
+      .security-cube {
+        width: 320px;
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .professional-header {
+        padding: 4rem 2rem;
+      }
+      
+      .national-flag {
+        width: 100px;
+        height: 65px;
+      }
+      
+      .expertise-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .plane-title {
+        font-size: 1.4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .professional-identity {
+        font-size: 2.2rem;
+      }
+      
+      .security-cube {
+        width: 280px;
+        height: 280px;
+      }
+      
+      .cube-plane {
+        padding: 2rem;
+      }
+      
+      .multilingual-labels {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .professional-identity {
+        font-size: 1.8rem;
+      }
+      
+      .expertise-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .national-flag {
+        width: 80px;
+        height: 50px;
+      }
+      
+      .terminal-button {
+        padding: 0.8rem 1.8rem;
+      }
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet>
+</head>
+<body>
+    <header class="professional-header">
+        <div class="identity-wrapper">
+            <div class="nationality-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg" 
+                     alt="Colombian Nationality" 
+                     class="national-flag">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg" 
+                     alt="Israeli Nationality" 
+                     class="national-flag">
+            </div>
+            <h1 class="professional-identity">CAMILO GAMBOA</h1>
+            <p class="expertise-subtitle">
+                OSCP | CEH Candidate<br>
+                Developer| Cybersecurity | Penetration Testing | ethical hacker
+        </div>
+    </header>
+
+    <section class="expertise-visualization">
+        <div class="cube-environment">
+            <div class="security-cube">
+                <div class="cube-plane front">
+                    <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Cybersecurity Operations Center" 
+                         class="cyber-visual">
+                </div>
+                <div class="cube-plane back">
+                    <h3 class="plane-title">Security Architecture</h3>
+                    <div class="multilingual-labels">
+                        <span>هندسة الأمن</span>
+                        <span>אדריכלות אבטחה</span>
+                    </div>
+                </div>
+                <div class="cube-plane left">
+                    <h3 class="plane-title">Threat Intelligence</h3>
+                    <div class="multilingual-labels">
+                        <span>استخبارات التهديدات</span>
+                        <span>מודיעין איומים</span>
+                    </div>
+                </div>
+                <div class="cube-plane right">
+                    <h3 class="plane-title">Cryptographic Systems</h3>
+                    <div class="multilingual-labels">
+                        <span>أنظمة التشفير</span>
+                        <span>מערכות קריפטוגרפיות</span>
+                    </div>
+                </div>
+                <div class="cube-plane top">
+                    <h3 class="plane-title">Network Defense</h3>
+                    <div class="multilingual-labels">
+                        <span>الدفاع الشبكي</span>
+                        <span>הגנת רשת</span>
+                    </div>
+                </div>
+                <div class="cube-plane bottom">
+                    <h3 class="plane-title">Incident Response</h3>
+                    <div class="multilingual-labels">
+                        <span>استجابة الحوادث</span>
+                        <span>תגובה לאירועים</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="information-system">
+        <div class="dynamic-interface">
+            <div id="typing-terminal" class="typing-terminal"></div>
+            <div class="navigation-system">
+             <button class="terminal-button" id="prev-terminal"> (ANTERIOR)</button>
+            
+              <button class="terminal-button" id="next-terminal">(SIGUIENTE)</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    const professionalQualifications = [
+        "Desarrollador Full-Stack con enfoque en aplicaciones seguras. Actualmente profundizando en seguridad ofensiva. 🛡️💻",
+        "Apasionado por la ciberseguridad desde la adolescencia. Autodidacta en técnicas de pentesting y análisis de malware. 🔍🔒",
+        "En camino a obtener certificaciones: CEH (Certified Ethical Hacker) y OSCP (Offensive Security Certified Professional). 📜⚔️",
+        "Aspiraciones futuras: Contribuir en organizaciones líderes como NSO Group, combinando desarrollo y seguridad ofensiva. 🌐🚀",
+        "Tecnologías principales: Bash | Python | Html | Css |Java C. MongoDB | PostgreSQL | Kali Linux | Parrot OS 🔧🛠️",
+        "Objetivo: Crear soluciones tecnológicas seguras desde su concepción. 'La seguridad no es un afterthought' 🔐👨💻"
+    ];
+
+    const terminalDisplay = document.getElementById('typing-terminal');
+    const prevTerminal = document.getElementById('prev-terminal');
+    const nextTerminal = document.getElementById('next-terminal');
+    const securityCube = document.querySelector('.security-cube');
+    
+    let currentPosition = 0;
+    let terminalActive = false;
+    let terminalInterval;
+
+    const terminalWriter = (content, speed = 40) => {
+        return new Promise(resolve => {
+            let charIndex = 0;
+            terminalDisplay.innerHTML = '';
+            
+            const writeCharacter = () => {
+                if (charIndex < content.length) {
+                    terminalDisplay.innerHTML += content.charAt(charIndex);
+                    charIndex++;
+                    terminalInterval = setTimeout(writeCharacter, speed);
+                } else {
+                    terminalDisplay.innerHTML += '<span class="terminal-cursor"></span>';
+                    resolve();
+                }
+            }
+            
+            writeCharacter();
+        });
+    }
+
+    const displayQualification = async (index) => {
+        if (terminalActive) return;
+        terminalActive = true;
+        
+        currentPosition = (index + professionalQualifications.length) % professionalQualifications.length;
+        
+        terminalDisplay.style.opacity = '0';
+        await new Promise(resolve => setTimeout(resolve, 250));
+        
+        terminalDisplay.style.opacity = '1';
+        await terminalWriter(professionalQualifications[currentPosition]);
+        
+        terminalActive = false;
+    }
+
+    prevTerminal.addEventListener('click', () => displayQualification(currentPosition - 1));
+    nextTerminal.addEventListener('click', () => displayQualification(currentPosition + 1));
+    
+    securityCube.addEventListener('click', () => {
+        securityCube.style.animationPlayState = 
+            securityCube.style.animationPlayState === 'paused' ? 'running' : 'paused';
+    });
+
+    displayQualification(0);
+    </script>
+</body>
+</html>
